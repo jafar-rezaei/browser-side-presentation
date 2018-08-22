@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+    <head>
+        <meta charset="utf-8">
+        <title>ارائه توسط mithril</title>
+        <script type="application/javascript" src="Javascript/jRun/jRun.js"></script>
+        <script type="application/javascript">
+
+            jRun.buildPlugIns([{
+                url : "mithril",
+                kind : false
+            }]);
+            jRun.init(
+                [
+                    {
+                        urls : ["main.css","fonts/fonts.css"],
+                        waitLoading : false,
+                    },
+                    {
+                        url : 'slide.js',
+                        attributes : {class : 'myFiles'},
+                        afterLoad : function(){
+                            log("loaded slide ");
+                        }
+                    },
+                    {
+                        url: "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css",
+                        cdn: true,
+                        waitLoading: false
+                    },
+                    {
+                        url: "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js",
+                        cdn: true,
+                        waitLoading: false
+                    }
+                ], function () {
+                    // my codes after files load
+                }
+            );
+        </script>
+    </head>
+    <body></body>
+</html>
